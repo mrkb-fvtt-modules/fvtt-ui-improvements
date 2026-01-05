@@ -1,0 +1,45 @@
+{
+    "id": "mrkb-ui-improvements",
+    "title": "MRKB UI Improvements",
+    "description": "<p>MRKB's Foundry VTT UI Improvements</p>",
+    "version": "1.0.0",
+    "compatibility": {
+        "minimum": "13",
+        "verified": "13.351"
+    },
+    "authors": [
+        {
+            "name": "MRKB",
+            "discord": "mrkb",
+            "flags": {}
+        }
+    ],
+    "relationships": {
+    },
+    "esmodules": [
+        "main.mjs"
+    ],
+    "styles": [
+        "styles/main.css"
+    ],
+    "languages": [
+        {
+            "lang": "ko",
+            "name": "한국어",
+            "path": "lang/ko.json"
+        },
+        {
+            "lang": "ja",
+            "name": "日本語",
+            "path": "lang/ja.json"
+        },
+        {
+            "lang": "en",
+            "name": "English",
+            "path": "lang/en.json"
+        }
+    ],
+    "url": "https://github.com/MaronKB/fvtt-ui-improvements",
+    "manifest": "https://raw.githubusercontent.com/MaronKB/fvtt-ui-improvements/refs/heads/master/module.json",
+    "download": "https://github.com/MaronKB/fvtt-ui-improvements/archive/master.zip"
+}

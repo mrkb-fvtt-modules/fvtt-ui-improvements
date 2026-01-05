@@ -1,0 +1,10 @@
+#chat {
+    background: linear-gradient(to right, transparent 0 12px, var(--sidebar-background-color) 12px 100%);
+    padding: 0;
+}
+.themed.theme-light #chat {
+    --sidebar-background-color: rgba(255, 255, 255, 0.8);
+}
+.themed.theme-dark #chat {
+    --sidebar-background-color: var(--color-cool-5-90);
+}

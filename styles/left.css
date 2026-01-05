@@ -1,0 +1,42 @@
+#ui-left {
+}
+#ui-left #ui-left-column-1 {
+}
+#scene-controls {
+    align-items: center;
+}
+#scene-controls > menu {
+    height: auto;
+}
+#sidebar-tabs {
+    align-self: center;
+}
+#scene-controls-layers,
+#sidebar-tabs > menu {
+    gap: 0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+#scene-controls-layers .ui-control,
+#sidebar-tabs > menu .ui-control {
+    width: 38px;
+    height: 42px;
+    border: 0;
+    border-radius: 0;
+}
+#scene-controls-layers .ui-control[aria-pressed=true],
+#sidebar-tabs > menu .ui-control[aria-pressed=true] {
+    background-color: var(--control-active-border-color);
+}
+#scene-controls-tools {
+}
+#scene-controls-tools .ui-control {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+#scene-controls-tools .ui-control[aria-pressed=true] {
+    background-color: var(--control-active-border-color);
+}
+#ui-left #ui-left-column-2 {
+}
