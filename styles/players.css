@@ -1,0 +1,58 @@
+#players {
+    gap: 4px;
+}
+#players #players-active,
+#players #players-inactive {
+    width: 240px;
+    gap: 4px;
+    background: none;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    scrollbar-width: none;
+}
+.player,
+#performance-stats {
+    position: relative;
+    background: var(--background-color);
+    padding: 6px 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin: 0;
+}
+.player::before {
+    position: absolute;
+    left: 28px;
+    bottom: 6px;
+}
+.player-avatar {
+    flex: none;
+    width: 32px;
+    height: 32px;
+    background: var(--border-color);
+    border-radius: 6px;
+    object-fit: cover;
+    overflow: hidden;
+}
+.player-name {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+.player-name .user-name {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    color: var(--text-color);
+}
+.player-name .character-name {
+    font-size: 12px;
+    line-height: 14px;
+    color: var(--text-color);
+    opacity: 0.7;
+    cursor: pointer;
+}
+.player-name .character-name:hover {
+    text-decoration: underline;
+    opacity: 1;
+}

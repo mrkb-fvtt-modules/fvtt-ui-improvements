@@ -39,7 +39,7 @@
             "path": "lang/en.json"
         }
     ],
-    "url": "https://github.com/MaronKB/fvtt-ui-improvements",
-    "manifest": "https://raw.githubusercontent.com/MaronKB/fvtt-ui-improvements/refs/heads/master/module.json",
-    "download": "https://github.com/MaronKB/fvtt-ui-improvements/archive/master.zip"
+    "url": "https://github.com/mrkb-fvtt-modules/fvtt-ui-improvements",
+    "manifest": "https://raw.githubusercontent.com/mrkb-fvtt-modules/fvtt-ui-improvements/refs/heads/master/module.json",
+    "download": "https://github.com/mrkb-fvtt-modules/fvtt-ui-improvements/archive/master.zip"
 }
