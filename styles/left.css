@@ -11,21 +11,18 @@
 #sidebar-tabs {
     align-self: center;
 }
-#scene-controls-layers,
-#sidebar-tabs > menu {
+#scene-controls-layers {
     gap: 0;
     border-radius: 4px;
     overflow: hidden;
 }
-#scene-controls-layers .ui-control,
-#sidebar-tabs > menu .ui-control {
+#scene-controls-layers .ui-control {
     width: 38px;
     height: 42px;
     border: 0;
     border-radius: 0;
 }
-#scene-controls-layers .ui-control[aria-pressed=true],
-#sidebar-tabs > menu .ui-control[aria-pressed=true] {
+#scene-controls-layers .ui-control[aria-pressed=true] {
     background-color: var(--control-active-border-color);
 }
 #scene-controls-tools {
@@ -39,4 +36,24 @@
     background-color: var(--control-active-border-color);
 }
 #ui-left #ui-left-column-2 {
+}
+#scene-navigation {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateX(50%);
+    gap: 4px;
+}
+.scene-navigation-menu {
+    gap: 4px;
+}
+.scene {
+    border: 0;
+    border-radius: var(--radius);
+}
+#scene-navigation-active .scene:first-child {
+    border-radius: 0 var(--radius) var(--radius) 0;
+}
+#scene-navigation-expand {
+    border-radius: 50%;
 }

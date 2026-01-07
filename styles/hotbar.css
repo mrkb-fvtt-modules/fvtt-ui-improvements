@@ -1,3 +1,44 @@
 #hotbar {
+    height: calc(var(--hotbar-size) + var(--gap-size) * 2);
+    gap: var(--gap-size);
+    padding: 4px;
+    border-radius: var(--radius);
+
     --hotbar-size: 48px;
+    --gap-size: 4px;
+}
+#hotbar.sm {
+    height: calc((var(--hotbar-size) * 2) + var(--gap-size) * 3);
+}
+#hotbar #action-bar {
+    gap: var(--gap-size);
+}
+#hotbar.sm #action-bar {
+    width: calc((var(--hotbar-size) * 5) + (var(--gap-size) * 4));
+}
+.hotbar-controls,
+.hotbar-controls > div {
+    gap: var(--gap-size);
+}
+.hotbar-controls .ui-control {
+    width: var(--button-size);
+    height: var(--button-size);
+    font-size: 12px;
+    border: 0;
+    border-radius: 50%;
+
+    --button-size: 22px;
+}
+#action-bar .slot {
+    border: 0;
+    border-radius: var(--radius) 50% 50% 50%;
+}
+#hotbar-page-controls .hotbar-page-control {
+    border: 0;
+}
+.hotbar-page-number {
+    background: var(--slot-color);
+    border-radius: 50%;
+    z-index: 1;
+    pointer-events: none;
 }
