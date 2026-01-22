@@ -1,23 +1,30 @@
 #hotbar {
-    height: calc(var(--hotbar-size) + var(--gap-size) * 2);
+    height: auto;
+    align-items: flex-end;
     gap: var(--gap-size);
     padding: 4px;
     border-radius: var(--radius);
 
-    --hotbar-size: 48px;
-    --gap-size: 4px;
+    --hotbar-size: 32px;
+    --gap-size: 2px;
 }
 #hotbar.sm {
-    height: calc((var(--hotbar-size) * 2) + var(--gap-size) * 3);
+    /*height: calc((var(--hotbar-size) * 2) + var(--gap-size) * 3);*/
+    /*height: calc(var(--hotbar-size) + var(--gap-size) * 2);*/
 }
 #hotbar #action-bar {
+    flex-direction: column-reverse;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
     gap: var(--gap-size);
 }
 #hotbar.sm #action-bar {
-    width: calc((var(--hotbar-size) * 5) + (var(--gap-size) * 4));
+    /*width: calc((var(--hotbar-size) * 5) + (var(--gap-size) * 4));*/
+    width: calc((var(--hotbar-size) * 10) + (var(--gap-size) * 9));
 }
 .hotbar-controls,
 .hotbar-controls > div {
+    height: auto;
     gap: var(--gap-size);
 }
 .hotbar-controls .ui-control {
@@ -27,11 +34,31 @@
     border: 0;
     border-radius: 50%;
 
-    --button-size: 22px;
+    --button-size: var(--hotbar-size);
+}
+.action-bar-line {
+    display: flex;
+    gap: var(--gap-size);
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 #action-bar .slot {
     border: 0;
     border-radius: var(--radius) 50% 50% 50%;
+    margin: 0;
+    opacity: 0.75;
+}
+#action-bar .slot:hover {
+    opacity: 1;
+}
+#action-bar .slot .key {
+    width: 12px;
+    height: 12px;
+    font-size: 10px;
+    font-weight: bold;
+    line-height: 12px;
+    white-space: nowrap;
 }
 #hotbar-page-controls .hotbar-page-control {
     border: 0;
