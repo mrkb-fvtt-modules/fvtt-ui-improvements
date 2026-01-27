@@ -98,6 +98,15 @@
 #players-inactive .player:hover > * {
     opacity: 1;
 }
+.player.idle::after {
+    content: "\f880";
+    font-family: var(--font-awesome);
+    margin-left: 0.5em;
+}
+.player.idle .player-name::after {
+    display: none;
+    content: none;
+}
 .player-avatar {
     flex: none;
     width: 26px;
