@@ -1,11 +1,15 @@
 Hooks.on("renderPlayers", (players, html) => {
-    Players._appendAvatar(html);
+    Players.initialize(html);
 });
 Hooks.on("renderHotbar", (hotbar, html, slotData) => {
     Hotbar.initialize(hotbar, html, slotData);
 });
 
 class Players {
+    static initialize(html) {
+        this._appendAvatar(html);
+        this._appendExpandButton(html);
+    }
     static _appendAvatar(html) {
         const users = game.users;
         users.forEach(function(u) {
@@ -41,6 +45,20 @@ class Players {
 
             name.replaceChildren(userSpan, charSpan);
         });
+    }
+    static _appendExpandButton(html) {
+        const playersActive = html.querySelector("#players-active");
+        const playersInactive = html.querySelector("#players-inactive");
+
+        const expandButton = document.createElement("button");
+        expandButton.className = "players-expand-button";
+        expandButton.innerHTML = `<i class='fas fa-caret-down'></i><span>${game.i18n.localize("MRKB.InactivePlayers")}</span>`;
+        expandButton.onclick = () => {
+            playersInactive.classList.toggle("expanded");
+            expandButton.classList.toggle("expanded");
+        };
+
+        playersInactive.after(expandButton);
     }
 }
 class Hotbar {
