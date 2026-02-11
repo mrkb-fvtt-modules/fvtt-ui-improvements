@@ -1,31 +1,31 @@
-#players {
+#players.styled {
     position: absolute;
     top: 4px;
     left: 4px;
     flex-direction: column-reverse;
     gap: 0;
 }
-#performance-stats {
+#players.styled #performance-stats {
     width: fit-content;
     text-shadow: 1px 0 0 var(--background-color), 0 1px 0 var(--background-color), -1px 0 0 var(--background-color), 0 -1px 0 var(--background-color);
     padding: 4px;
 }
-#players-expand {
+#players.styled #players-expand {
     background: var(--background-color);
     border-radius: 50%;
     order: 1;
 }
-#latency {
+#players.styled #latency {
     order: 2;
 }
-#fps {
+#players.styled #fps {
     order: 3;
 }
-#players-expand::before {
+#players.styled #players-expand::before {
     transform: rotate(180deg);
 }
 
-.players-list {
+#players.styled .players-list {
     max-height: unset!important;
     gap: 0;
     background: none;
@@ -39,7 +39,7 @@
     opacity: 0;
     transition: opacity 300ms;
 }
-#players-active {
+#players.styled #players-active {
     flex-direction: column-reverse;
     gap: 4px;
     background: none;
@@ -47,8 +47,8 @@
     border: 0;
     border-radius: 0;
 }
-#players.expanded #players-active .players-list,
-#players.expanded #players-inactive.expanded {
+#players.styled.expanded #players-active .players-list,
+#players.styled.expanded #players-inactive.expanded {
     pointer-events: all;
     opacity: 1;
 }
@@ -67,14 +67,14 @@
 .players-expand-button.expanded i {
     transform: rotate(180deg);
 }
-#players.expanded .players-expand-button {
+#players.styled.expanded .players-expand-button {
     pointer-events: all;
     opacity: 0.4;
 }
-#players.expanded .players-expand-button:hover {
+#players.styled.expanded .players-expand-button:hover {
     opacity: 1;
 }
-.player {
+#players.styled .player {
     position: relative;
     text-shadow: 0 1px var(--background-color), 1px 0 var(--background-color), 0 -1px var(--background-color), -1px 0 var(--background-color);
     padding: 6px 8px;
@@ -84,30 +84,30 @@
     border-radius: 0;
     margin: 0;
 }
-.player:first-child {
+#players.styled .player:first-child {
     border-top: 0;
 }
-.player::before {
+#players.styled .player::before {
     position: absolute;
     left: 22px;
     bottom: 6px;
 }
-#players-inactive .player > * {
+#players.styled #players-inactive .player > * {
     opacity: 0.8;
 }
-#players-inactive .player:hover > * {
+#players.styled #players-inactive .player:hover > * {
     opacity: 1;
 }
-.player.idle::after {
+#players.styled .player.idle::after {
     content: "\f880";
     font-family: var(--font-awesome);
     margin-left: 0.5em;
 }
-.player.idle .player-name::after {
+#players.styled .player.idle .player-name::after {
     display: none;
     content: none;
 }
-.player-avatar {
+#players.styled .player-avatar {
     flex: none;
     width: 26px;
     height: 26px;
@@ -116,25 +116,25 @@
     object-fit: cover;
     overflow: hidden;
 }
-.player-name {
+#players.styled .player-name {
     display: flex;
     flex-direction: column;
     gap: 2px;
 }
-.player-name .user-name {
+#players.styled .player-name .user-name {
     font-weight: 600;
     font-size: 12px;
     line-height: 14px;
     color: var(--text-color);
 }
-.player-name .character-name {
+#players.styled .player-name .character-name {
     font-size: 10px;
     line-height: 12px;
     color: var(--text-color);
     opacity: 0.7;
     cursor: pointer;
 }
-.player-name .character-name:hover {
+#players.styled .player-name .character-name:hover {
     text-decoration: underline;
     opacity: 1;
 }

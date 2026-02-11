@@ -1,4 +1,4 @@
-#pause {
+#pause.styled {
     top: 0;
     left: 0;
     height: 100vh;
@@ -11,22 +11,22 @@
     pointer-events: none;
     transition: opacity 0.3s ease, backdrop-filter 0.3s ease;
 }
-#pause.paused {
+#pause.styled.paused {
     backdrop-filter: blur(4px) brightness(0.7);
     opacity: 1;
     pointer-events: all;
     animation: none;
 }
-#pause img {
+#pause.styled img {
     display: none;
 }
-#pause figcaption {
+#pause.styled figcaption {
     width: 100%;
     height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: var(--gothic-extra), sans-serif;
+    font-family: 'Black Han Sans', sans-serif;
     font-size: 36px;
     font-weight: 400;
     text-shadow: none;

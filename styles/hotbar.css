@@ -1,4 +1,4 @@
-#hotbar {
+#hotbar.styled {
     height: auto;
     align-items: flex-end;
     gap: var(--gap-size);
@@ -8,26 +8,26 @@
     --hotbar-size: 32px;
     --gap-size: 2px;
 }
-#hotbar.sm {
+#hotbar.styled.sm {
     /*height: calc((var(--hotbar-size) * 2) + var(--gap-size) * 3);*/
     /*height: calc(var(--hotbar-size) + var(--gap-size) * 2);*/
 }
-#hotbar #action-bar {
+#hotbar.styled #action-bar {
     flex-direction: column-reverse;
     flex-wrap: nowrap;
     justify-content: flex-start;
     gap: var(--gap-size);
 }
-#hotbar.sm #action-bar {
+#hotbar.styled.sm #action-bar {
     /*width: calc((var(--hotbar-size) * 5) + (var(--gap-size) * 4));*/
     width: calc((var(--hotbar-size) * 10) + (var(--gap-size) * 9));
 }
-.hotbar-controls,
-.hotbar-controls > div {
+#hotbar.styled .hotbar-controls,
+#hotbar.styled .hotbar-controls > div {
     height: auto;
     gap: var(--gap-size);
 }
-.hotbar-controls .ui-control {
+#hotbar.styled .hotbar-controls .ui-control {
     width: var(--button-size);
     height: var(--button-size);
     font-size: 12px;
@@ -36,23 +36,23 @@
 
     --button-size: var(--hotbar-size);
 }
-.action-bar-line {
+#hotbar.styled .action-bar-line {
     display: flex;
     gap: var(--gap-size);
     list-style: none;
     margin: 0;
     padding: 0;
 }
-#action-bar .slot {
+#hotbar.styled #action-bar .slot {
     border: 0;
     border-radius: var(--radius) 50% 50% 50%;
     margin: 0;
     opacity: 0.75;
 }
-#action-bar .slot:hover {
+#hotbar.styled #action-bar .slot:hover {
     opacity: 1;
 }
-#action-bar .slot .key {
+#hotbar.styled #action-bar .slot .key {
     width: 12px;
     height: 12px;
     font-size: 10px;
@@ -60,10 +60,10 @@
     line-height: 12px;
     white-space: nowrap;
 }
-#hotbar-page-controls .hotbar-page-control {
+#hotbar.styled #hotbar-page-controls .hotbar-page-control {
     border: 0;
 }
-.hotbar-page-number {
+#hotbar.styled .hotbar-page-number {
     background: var(--slot-color);
     border-radius: 50%;
     z-index: 1;

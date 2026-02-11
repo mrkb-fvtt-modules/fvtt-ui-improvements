@@ -1,8 +1,12 @@
 @import "./hotbar.css";
-@import "./left.css";
 @import "./pause.css";
 @import "./players.css";
+@import "./sceneControls.css";
+@import "./sceneNavigation.css";
 @import "./sidebar.css";
+
+@import url('https://fonts.googleapis.com/css?family=Black+Han+Sans:400');
+@import url('https://fonts.googleapis.com/css?family=Black+Han+Sans&display=swap&subset=korean');
 
 html{
     --radius: 5px;

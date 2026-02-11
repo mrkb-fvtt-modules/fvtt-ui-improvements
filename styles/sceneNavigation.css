@@ -1,0 +1,20 @@
+#scene-navigation.styled {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateX(50%);
+    gap: 4px;
+}
+#scene-navigation.styled .scene-navigation-menu {
+    gap: 4px;
+}
+#scene-navigation.styled .scene {
+    border: 0;
+    border-radius: var(--radius);
+}
+#scene-navigation.styled #scene-navigation-active .scene:first-child {
+    border-radius: 0 var(--radius) var(--radius) 0;
+}
+#scene-navigation.styled #scene-navigation-expand {
+    border-radius: 50%;
+}

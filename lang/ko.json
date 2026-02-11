@@ -1,5 +1,17 @@
 {
     "MRKB": {
-        "InactivePlayers": "미접속 플레이어"
+        "InactivePlayers": "미접속 플레이어",
+        "StyledHotbarName": "단축바 스타일링",
+        "StyledHotbarHint": "2줄 단축바와 Shift 키를 통한 다른 줄 접근을 적용합니다.",
+        "StyledPauseScreenName": "일시정지 화면 스타일링",
+        "StyledPauseScreenHint": "일시정지 화면의 스타일을 개선합니다.",
+        "StyledPlayersName": "플레이어 목록 스타일링",
+        "StyledPlayersHint": "플레이어 목록의 스타일을 개선하고 아바타와 캐릭터 포트레이트를 삽입합니다.",
+        "StyledSceneControlsAndSidebarMenuName": "장면 컨트롤 및 사이드바 메뉴 스타일링",
+        "StyledSceneControlsAndSidebarMenuHint": "장면 컨트롤과 사이드바 메뉴의 스타일을 개선합니다.",
+        "StyledSceneNavigationName": "장면 내비게이션 스타일링",
+        "StyledSceneNavigationHint": "장면 내비게이션의 스타일을 개선합니다.",
+        "StyledChatListBackgroundName": "채팅 목록 배경 스타일링",
+        "StyledChatListBackgroundHint": "채팅 목록에 배경을 삽입합니다."
     }
 }

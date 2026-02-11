@@ -1,5 +1,17 @@
 {
     "MRKB": {
-        "InactivePlayers": "未参加"
+        "InactivePlayers": "未参加",
+        "StyledHotbarName": "スタイル付きホットバー",
+        "StyledHotbarHint": "2行のホットバーとShiftキーで他の行にアクセスできるようにします。",
+        "StyledPauseScreenName": "スタイル付き一時停止画面",
+        "StyledPauseScreenHint": "一時停止画面のスタイルを改善します。",
+        "StyledPlayersName": "スタイル付きプレイヤーリスト",
+        "StyledPlayersHint": "プレイヤーリストのスタイルを改善し、アバターとキャラクターポートレートを挿入します。",
+        "StyledSceneControlsAndSidebarMenuName": "スタイル付きシーンコントロールとサイドバーメニュー",
+        "StyledSceneControlsAndSidebarMenuHint": "シーンコントロールとサイドバーメニューのスタイルを改善します。",
+        "StyledSceneNavigationName": "スタイル付きシーンナビゲーション",
+        "StyledSceneNavigationHint": "シーンナビゲーションのスタイルを改善します。",
+        "StyledChatListBackgroundName": "スタイル付きチャットリスト背景",
+        "StyledChatListBackgroundHint": "チャットリストに背景を挿入します。"
     }
 }
