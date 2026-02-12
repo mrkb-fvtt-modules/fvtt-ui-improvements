@@ -7,7 +7,7 @@ export default class Settings {
         Hooks.on("renderSceneControls", this.styledElementHandler.bind(this, "controls"));
         Hooks.on("renderSidebar", this.styledElementHandler.bind(this, "sidebar"));
         Hooks.on("renderSceneNavigation", this.styledElementHandler.bind(this, "navigation"));
-        Hooks.on("renderChatLog", this.styledElementHandler.bind(this, "chatLog"));
+        Hooks.on("renderChatLog", this.styledElementHandler.bind(this, "chat"));
     }
     static _registerSettings() {
         game.settings.register("mrkb-ui-improvements", "styledHotbar", {
@@ -62,7 +62,7 @@ export default class Settings {
             config: true,
             type: Boolean,
             default: true,
-            onChange: this.styledElementHandler.bind(this, "chatLog")
+            onChange: this.styledElementHandler.bind(this, "chat")
         });
     }
     static _get(key) {
@@ -86,9 +86,9 @@ export default class Settings {
             case "navigation":
                 ui.nav.element.classList.toggle("styled", this._get("styledSceneNavigation"));
                 break;
-            case "chatLog":
-                const chatLog = ui.chat.element?.querySelector(".chat-log");
-                if (chatLog) chatLog.classList.toggle("styled", this._get("styledChatListBackground"));
+            case "chat":
+                const chat = ui.chat.element;
+                if (chat) chat.classList.toggle("styled", this._get("styledChatListBackground"));
                 break;
         }
     }
