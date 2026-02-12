@@ -3,6 +3,8 @@ export default class Players {
         Hooks.on("renderPlayers", (players, html) => {
             const styledPlayers = game.settings.get("mrkb-ui-improvements", "styledPlayers");
             if (!styledPlayers) return;
+
+            html.classList.add("styled");
             this._appendAvatar(html);
             this._appendExpandButton(html);
         });

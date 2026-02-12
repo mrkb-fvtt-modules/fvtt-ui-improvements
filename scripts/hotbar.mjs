@@ -1,12 +1,12 @@
 export default class Hotbar {
     static initialize() {
-        Hooks.on("renderHotbar", (hotbar, html) => {
-            const isStyled = game.settings.get("mrkb-ui-improvements", "styledHotbar");
-            if (!isStyled) return;
-            this._createHotbarElement.bind(this, hotbar, html)();
-        });
+        Hooks.on("renderHotbar", this._createHotbarElement.bind(this));
     }
     static _createHotbarElement(hotbar, html) {
+        const isStyled = game.settings.get("mrkb-ui-improvements", "styledHotbar");
+        if (!isStyled) return;
+
+        html.classList.add("styled");
         const actionBarElement = html.querySelector("#action-bar");
         const userHotbar = game.user.hotbar;
         const page = ui.hotbar.page;
@@ -61,8 +61,6 @@ export default class Hotbar {
     }
     static _hotbarListener(e) {
         if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA" || e.target.isContentEditable) return;
-
-        console.log(e);
 
         const key = e.keyCode - 48;
         if (key < 0 || key > 9) return;

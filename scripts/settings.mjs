@@ -1,11 +1,13 @@
 export default class Settings {
     static initialize() {
-        Hooks.on("init", () => {
-            this._registerSettings();
-        });
-        Hooks.on("ready", () => {
-            this.styledElementHandler();
-        });
+        Hooks.on("init", this._registerSettings.bind(this));
+        Hooks.on("renderHotbar", this.styledElementHandler.bind(this, "hotbar"));
+        Hooks.on("renderGamePause", this.styledElementHandler.bind(this, "pause"));
+        Hooks.on("renderPlayers", this.styledElementHandler.bind(this, "players"));
+        Hooks.on("renderSceneControls", this.styledElementHandler.bind(this, "controls"));
+        Hooks.on("renderSidebar", this.styledElementHandler.bind(this, "sidebar"));
+        Hooks.on("renderSceneNavigation", this.styledElementHandler.bind(this, "navigation"));
+        Hooks.on("renderChatLog", this.styledElementHandler.bind(this, "chatLog"));
     }
     static _registerSettings() {
         game.settings.register("mrkb-ui-improvements", "styledHotbar", {
@@ -15,7 +17,7 @@ export default class Settings {
             config: true,
             type: Boolean,
             default: true,
-            onChange: this.styledElementHandler.bind(this)
+            onChange: () => ui?.hotbar?.render()
         });
         game.settings.register("mrkb-ui-improvements", "styledPauseScreen", {
             name: "MRKB.StyledPauseScreenName",
@@ -24,7 +26,7 @@ export default class Settings {
             config: true,
             type: Boolean,
             default: true,
-            onChange: this.styledElementHandler.bind(this)
+            onChange: this.styledElementHandler.bind(this, "pause")
         });
         game.settings.register("mrkb-ui-improvements", "styledPlayers", {
             name: "MRKB.StyledPlayersName",
@@ -33,7 +35,7 @@ export default class Settings {
             config: true,
             type: Boolean,
             default: true,
-            onChange: this.styledElementHandler.bind(this)
+            onChange: () => ui?.players?.render()
         });
         game.settings.register("mrkb-ui-improvements", "styledSceneControlsAndSidebarMenu", {
             name: "MRKB.StyledSceneControlsAndSidebarMenuName",
@@ -42,7 +44,7 @@ export default class Settings {
             config: true,
             type: Boolean,
             default: true,
-            onChange: this.styledElementHandler.bind(this)
+            onChange: this.styledElementHandler.bind(this, "controls")
         });
         game.settings.register("mrkb-ui-improvements", "styledSceneNavigation", {
             name: "MRKB.StyledSceneNavigationName",
@@ -51,7 +53,7 @@ export default class Settings {
             config: true,
             type: Boolean,
             default: true,
-            onChange: this.styledElementHandler.bind(this)
+            onChange: this.styledElementHandler.bind(this, "navigation")
         });
         game.settings.register("mrkb-ui-improvements", "styledChatListBackground", {
             name: "MRKB.StyledChatListBackgroundName",
@@ -60,37 +62,34 @@ export default class Settings {
             config: true,
             type: Boolean,
             default: true,
-            onChange: this.styledElementHandler.bind(this)
+            onChange: this.styledElementHandler.bind(this, "chatLog")
         });
     }
     static _get(key) {
         return game.settings.get("mrkb-ui-improvements", key);
     }
-    static styledElementHandler() {
-        const hotbar = ui.hotbar.element;
-        const pause = ui.pause.element;
-        const players = ui.players.element;
-        const sceneControls = ui.controls.element;
-        const sidebarMenu = ui.sidebar.element.querySelector(".tabs > menu");
-        const sceneNavigation = ui.nav.element;
-        const chatLog = ui.chat.element.querySelector(".chat-log");
+    static styledElementHandler(type) {
+        if (!type) return;
 
-        const isHotbarStyled = this._get("styledHotbar");
-        const isPauseStyled = this._get("styledPauseScreen");
-        const isPlayersStyled = this._get("styledPlayers");
-        const isSceneControlsAndSidebarMenuStyled = this._get("styledSceneControlsAndSidebarMenu");
-        const isSceneNavigationStyled = this._get("styledSceneNavigation");
-        const isChatListBackgroundStyled = this._get("styledChatListBackground");
-
-        if (hotbar) hotbar.classList.toggle("styled", isHotbarStyled);
-        if (pause) pause.classList.toggle("styled", isPauseStyled);
-        if (players) players.classList.toggle("styled", isPlayersStyled);
-        if (sceneControls) sceneControls.classList.toggle("styled", isSceneControlsAndSidebarMenuStyled);
-        if (sidebarMenu) sidebarMenu.classList.toggle("styled", isSceneControlsAndSidebarMenuStyled);
-        if (sceneNavigation) sceneNavigation.classList.toggle("styled", isSceneNavigationStyled);
-        if (chatLog) chatLog.classList.toggle("styled", isChatListBackgroundStyled);
-
-        ui.hotbar.render();
-        ui.players.render();
+        switch (type) {
+            case "pause":
+                ui.pause.element.classList.toggle("styled", this._get("styledPauseScreen"));
+                break;
+            case "controls":
+            case "sidebar":
+                const sceneControls = ui.controls.element;
+                const sidebarMenu = ui.sidebar.element?.querySelector(".tabs > menu");
+                const isStyled = this._get("styledSceneControlsAndSidebarMenu");
+                if (sceneControls) sceneControls.classList.toggle("styled", isStyled);
+                if (sidebarMenu) sidebarMenu.classList.toggle("styled", isStyled);
+                break;
+            case "navigation":
+                ui.nav.element.classList.toggle("styled", this._get("styledSceneNavigation"));
+                break;
+            case "chatLog":
+                const chatLog = ui.chat.element?.querySelector(".chat-log");
+                if (chatLog) chatLog.classList.toggle("styled", this._get("styledChatListBackground"));
+                break;
+        }
     }
 }
